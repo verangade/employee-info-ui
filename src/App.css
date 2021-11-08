@@ -2,16 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
+
 
 .App-header {
   background-color: #282c34;
@@ -28,11 +21,38 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.NavBar {
+  background-color: #282c34;
+  color: #e6a51a;
+  align-items: center;
+  width: 200px;
+  height: 600px;
+  float: left;
+}
+
+.Header {
+  background-color: #b7c9ec;
+  color: #6b0836;
+  float: left;
+  width: 200px;
+  height: 200px;
+}
+
+.EmployeeList {
+  background-color: #94b0e7;
+  color: #00a098;
+  align-items: center;
+  width: 600px;
+  height: 400px;
+  float: left;
+}
+
+
+.SearchBar {
+  background-color: #f1db15;
+  color: #122704;
+  align-items: center;
+  width: 600px;
+  height: 100px;
+  float: left;
 }
