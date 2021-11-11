@@ -3,6 +3,7 @@ import EmployeeList from "./EmployeeList"
 import Header from "./Header"
 import NavBar from "./NavBar"
 import SearchBar from "./SearchBar"
+import Test from "./Test"
 
 
 class MainContainer extends Component {
@@ -36,7 +37,7 @@ class MainContainer extends Component {
             <Header/>
             <SearchBar/>
             <EmployeeList employeeData={this.state.employeeData}/>
-           
+            <Test/>
            
         </>);
     }
