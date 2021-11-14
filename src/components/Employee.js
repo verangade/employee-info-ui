@@ -9,7 +9,7 @@ function Employee(props){
             {this.props.employeeData.firstName}  {this.props.employeeData.lastName} 
         </li> */
         <li className="Employee">
-           <input type="checkbox" onChange={ () => console.log("checked")} checked={val}/> {props.empData.firstName}  {props.empData.lastName} 
+           <input type="checkbox" onChange={ () => props.handleChangeProps(props.empData.id)} checked={props.empData.activeFlag}/> {props.empData.firstName}  {props.empData.lastName} 
         </li>
 
         ); 

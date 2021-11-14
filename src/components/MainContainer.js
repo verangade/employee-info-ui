@@ -29,6 +29,12 @@ class MainContainer extends Component {
         }
     ]  };
 
+    handleChange = (id) => {
+        console.log("clicked "+id);
+
+        
+    };
+
     render(){
       
 
@@ -36,7 +42,7 @@ class MainContainer extends Component {
              <NavBar/>
             <Header/>
             <SearchBar/>
-            <EmployeeList employeeData={this.state.employeeData}/>
+            <EmployeeList employeeData={this.state.employeeData} handleChangeProps={this.handleChange} />
             <Test/>
            
         </>);
