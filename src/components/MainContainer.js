@@ -8,31 +8,65 @@ import Test from "./Test"
 
 class MainContainer extends Component {
 
+    state = { employeeData : []  }
+
+  /*
     state = {  employeeData : [
         {
             "id" : "1",
             "firstName" : "Jhon",
             "lastName" : "Doe",
             "age " : "20",
+            "activeFlag" : true
         },
         {
             "id" : "2",
             "firstName" : "Jane",
             "lastName" : "Doe",
             "age " : "22",
+            "activeFlag" : false
         },
         {
             "id" : "3",
             "firstName" : "Mike",
             "lastName" : "Penn",
             "age " : "40",
+            "activeFlag" : false
         }
     ]  };
 
-    handleChange = (id) => {
-        console.log("clicked "+id);
+    */
 
-        
+    
+    async componentDidMount(){
+
+       const r = await fetch("http://localhost:8081/getAll");
+       console.log("R  "+r);
+       const b =  await r.json();
+       console.log("B  "+b);
+
+       this.setState({ employeeData : b})
+
+       console.log("EmployeeData  "+this.state.employeeData);
+
+   }
+   
+  
+
+    handleChange = id => {
+        console.log("clicked "+id);
+        const {employeeData} = this.state;
+        console.log("employee Data  "+employeeData);
+       
+        this.setState({
+            employeeData : this.state.employeeData.map( employee => {
+                 if(employee.id === id ){
+                     employee.activeFlag =  !employee.activeFlag
+                 }
+
+              return    employee;
+            })
+        });    
     };
 
     render(){

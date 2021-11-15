@@ -2,7 +2,7 @@ import React,{Component} from "react"
 import Employee from "./Employee"
 
 class EmployeeList extends Component{
-    state = { employeeData : []  }
+   /* state = { employeeData : []  }
 
      async componentDidMount(){
 
@@ -16,16 +16,17 @@ class EmployeeList extends Component{
         console.log("EmployeeData  "+this.state.employeeData);
 
     }
+    */
 
     render(){
-        const {employeeData} = this.state;
+        //const {employeeData} = this.state;
         //console.log("test new2 "+employeeData);
         return(
         <div className="EmployeeList">
  
                 <ul>
                    {
-                       employeeData.map( x => <Employee key={x.id} empData ={x} handleChangeProps={this.props.handleChangeProps}/> )
+                       this.props.employeeData.map( x => <Employee key={x.id} empData ={x} handleChangeProps={this.props.handleChangeProps}/> )
                    }
   
                 </ul>
