@@ -61,7 +61,10 @@ class MainContainer extends Component {
         this.setState(prevState => ({
             employeeData : prevState.employeeData.map( employee => {
                  if(employee.id === id ){
-                     employee.activeFlag =  !employee.activeFlag
+                    return {
+                        ...employee,
+                        activeFlag:  !employee.activeFlag,
+                    }  
                  }
 
               return    employee;
