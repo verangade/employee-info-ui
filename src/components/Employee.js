@@ -10,7 +10,7 @@ function Employee(props){
         </li> */
         <li className="Employee" key={props.empData.id}>
            <input type="checkbox" onChange={ () => props.handleChangeProps(props.empData.id)} checked={props.empData.activeFlag}/> {props.empData.firstName}  {props.empData.lastName} 
-            <button>Delete</button>
+            <button onClick={ () => props.deleteEmployeeProps(props.empData.id)}>Delete</button>
         </li>
 
         ); 

@@ -26,7 +26,7 @@ class EmployeeList extends Component{
  
                 <ul>
                    {
-                       this.props.employeeData.map( x => <Employee key={x.id} empData ={x} handleChangeProps={this.props.handleChangeProps}/> )
+                       this.props.employeeData.map( x => <Employee key={x.id} empData ={x} handleChangeProps={this.props.handleChangeProps} deleteEmployeeProps={this.props.deleteEmployeeProps}/> )
                    }
   
                 </ul>

@@ -74,6 +74,16 @@ class MainContainer extends Component {
 
     deleteEmployee = id => {
         console.log("Employee deleted",id)
+        this.setState({
+            employeeData: [
+                ...this.state.employeeData.filter(
+                    employee => {
+                        return employee.id !== id;
+                    }
+                )
+
+            ]
+        });
     };
 
     render(){
