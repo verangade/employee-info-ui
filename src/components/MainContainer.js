@@ -72,6 +72,10 @@ class MainContainer extends Component {
         }));    
     };
 
+    deleteEmployee = id => {
+        console.log("Employee deleted",id)
+    };
+
     render(){
       
 
@@ -79,7 +83,7 @@ class MainContainer extends Component {
              <NavBar/>
             <Header/>
             <SearchBar/>
-            <EmployeeList employeeData={this.state.employeeData} handleChangeProps={this.handleChange} />
+            <EmployeeList employeeData={this.state.employeeData} handleChangeProps={this.handleChange} deleteEmployeeProps={this.deleteEmployee}/>
             <Test/>
            
         </>);
