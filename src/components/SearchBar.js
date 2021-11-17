@@ -4,14 +4,15 @@ import React , {Component} from "react"
 class SearchBar extends Component{
 
     state = {
-        employee : ""
+        employeeFname : "hello",
+        employeeLname : "hello2"
     };
 
     onChange = e => {
         console.log(e.target.value)
 
         this.setState({
-            employee : e.target.value
+            [e.target.name] : e.target.value
         });
     }
 
@@ -20,8 +21,10 @@ class SearchBar extends Component{
         const REACT_VERSION = React.version;
         return(<div className="SearchBar">Search {REACT_VERSION}
             <form>
-                <input type="text" placeholder="Search Employee" value={this.state.employee} onChange={this.onChange}/>
-                <button>Search</button>
+                <input type="text" name="employeeFname" placeholder="Search Employee" value={this.state.employeeFname} onChange={this.onChange}/>
+                <button>Search By First Name</button> <br/>
+                <input type="text" name="employeeLname" placeholder="Search Employee by Age" value={this.state.employeeLname} onChange={this.onChange}/>
+                <button>Search By Last Name</button>
             </form>
         
         
