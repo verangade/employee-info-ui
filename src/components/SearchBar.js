@@ -16,15 +16,21 @@ class SearchBar extends Component{
         });
     }
 
+    handleSubmit = e => {
+       e.preventDefault();
+       console.log(this.state.employeeFname);
+       this.props.addEmployee(this.state.employeeFname);
+    }
+
     render(){
 
         const REACT_VERSION = React.version;
         return(<div className="SearchBar">Search {REACT_VERSION}
-            <form>
-                <input type="text" name="employeeFname" placeholder="Search Employee" value={this.state.employeeFname} onChange={this.onChange}/>
-                <button>Search By First Name</button> <br/>
-                <input type="text" name="employeeLname" placeholder="Search Employee by Age" value={this.state.employeeLname} onChange={this.onChange}/>
-                <button>Search By Last Name</button>
+            <form className="form-container" onSubmit={this.handleSubmit}>
+                <input  type="text" name="employeeFname" placeholder="Search Employee" value={this.state.employeeFname} onChange={this.onChange}/>
+                <button className="input-submit">Search By First Name</button> <br/>
+                <input  type="text" name="employeeLname" placeholder="Search Employee by Age" value={this.state.employeeLname} onChange={this.onChange}/>
+                <button className="input-submit">Search By Last Name</button>
             </form>
         
         

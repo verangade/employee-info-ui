@@ -72,6 +72,23 @@ class MainContainer extends Component {
         }));    
     };
 
+    addEmployee = (e) => {
+        console.log("add employee"+ e)
+        console.log("employee length "+  this.state.employeeData.length)
+       
+        const newEmployee = {
+            "id" : this.state.employeeData.length + 1,
+            "firstName" : e,
+            "lastName" : "Penn",
+            "age " : "40",
+            "activeFlag" : false
+
+        };
+        this.setState({
+            employeeData: [...this.state.employeeData,newEmployee]
+        });
+    }
+
     deleteEmployee = id => {
         console.log("Employee deleted",id)
         this.setState({
@@ -92,8 +109,12 @@ class MainContainer extends Component {
        return( <>
              <NavBar/>
             <Header/>
-            <SearchBar/>
-            <EmployeeList employeeData={this.state.employeeData} handleChangeProps={this.handleChange} deleteEmployeeProps={this.deleteEmployee}/>
+            <SearchBar  addEmployee ={this.addEmployee}/>
+            <EmployeeList 
+            employeeData={this.state.employeeData} 
+            handleChangeProps={this.handleChange} 
+            deleteEmployeeProps={this.deleteEmployee} 
+            />
             <Test/>
            
         </>);
